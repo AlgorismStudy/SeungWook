@@ -30,19 +30,31 @@ def bfs(graph, start_node):
     return visited
 
 
-graph = {}
+# graph = {}
+# N, M, V = map(int, input().split())
+# list = [input().split() for i in range(M)]
+# for i, j in list:
+#     if i not in graph:
+#         graph[i] = [j]
+#     elif j not in graph[i]:
+#         graph[i].append(j)
+
+#     if j not in graph:
+#         graph[j] = [i]
+#     elif i not in graph[j]:
+#         graph[j].append(i)
+
+# print(*dfs(graph, str(V)), sep=" ")
+# print(*bfs(graph, str(V)), sep=" ")
+
 N, M, V = map(int, input().split())
-list = [input().split() for i in range(M)]
-for i, j in list:
-    if i not in graph:
-        graph[i] = [j]
-    elif j not in graph[i]:
-        graph[i].append(j)
 
-    if j not in graph:
-        graph[j] = [i]
-    elif i not in graph[j]:
-        graph[j].append(i)
+graph = [set([]) for _ in range(N + 1)]
 
-print(*dfs(graph, str(V)), sep=" ")
-print(*bfs(graph, str(V)), sep=" ")
+for _ in range(M):
+    a, b = map(int, input().split())
+    graph[a].add(b)
+    graph[b].add(a)
+
+print(*dfs(graph, V))
+print(*bfs(graph, V))
