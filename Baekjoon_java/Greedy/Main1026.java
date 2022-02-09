@@ -20,11 +20,11 @@ public class Main1026 {
         Arrays.sort(arr1);
         
         st = new StringTokenizer(br.readLine(), " ");
-        int arr2[] = new int[N];
+        Integer arr2[] = new Integer[N];
         for (int i=0; i<N; i++) {
             arr2[i] = Integer.parseInt(st.nextToken());
         }
-        arr2 = Arrays.stream(arr2).boxed().sorted(Collections.reverseOrder()).mapToInt(Integer::intValue).toArray();
+        Arrays.sort(arr2, Collections.reverseOrder());
 
         br.close();
 
