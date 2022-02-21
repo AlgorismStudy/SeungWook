@@ -19,15 +19,17 @@ public class Main11000 {
             end.offer(Integer.parseInt(st.nextToken()));
         }
         br.close();
-        
-        int count = 1;
+
+        int max = 0;
+        int count = 0;
         while(!start.isEmpty()) {
             int tmp = start.poll();
-            while(end.peek() <= tmp) {
-                count++;
+            while (tmp >= end.peek()) {
                 end.poll();
+                count--;
             }
+            max = Math.max(max, ++count);
         }
-        System.out.print(count);
+        System.out.print(max);
     }
 }
