@@ -10,7 +10,7 @@ public class Main9461 {
         for (int i=0; i<t; i++) {
             int n = Integer.parseInt(br.readLine());
 
-            if (n<=3) System.out.println(1);
+            if (n<=3) System.out.println("1");
             else {
                 long[] arr = new long[n+1];
                 arr[1] = 1;
